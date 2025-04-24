@@ -1,7 +1,7 @@
 // Metronomo Digital (Incremento)
 let metronomeInterval;
 let playMetronomo = false;
-let audio2 = new Audio("./src/audios/hickory.mp3");
+let audio2 = new Audio("../audios/hickory.mp3");
 let somAtivo = false;
 let divisaoativa = false;
 let subdivisaoativa = false;
