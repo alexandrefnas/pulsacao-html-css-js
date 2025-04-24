@@ -1,0 +1,92 @@
+.textos {
+    height: calc(100vh - 100px);
+    width: 90%;
+    font-size: 45px;
+}
+
+h1{
+    text-align: center;
+    padding: 10px;
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+.textos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* background: lightgray; */
+}
+
+.texto-geral {
+    padding: 50px;
+}
+
+.conteudos {
+    margin-bottom: 24px; /* espaço entre os blocos */
+  }
+  
+  .conteudos p {
+    margin: 0;
+    margin-bottom: 4px; /* controla o espaço entre o texto e a imagem */
+    font-weight: bold;
+  }
+  
+  .conteudos img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px; /* opcional: cantos arredondados */
+  }
+
+  .pulsando {
+    animation: batida 1.4s ease-in-out infinite;
+    text-align: center;
+    /* font-size: 2.5rem; */
+    font-weight: bold;
+    color: #e60026;
+  }
+  
+  @keyframes batida {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+      color: #e60026;
+    }
+  
+    10% {
+      transform: scale(1.15);
+      opacity: 0.9;
+      color: #ff3333;
+    }
+  
+    20% {
+      transform: scale(1);
+      opacity: 1;
+      color: #e60026;
+    }
+  
+    30% {
+      transform: scale(1.13);
+      opacity: 0.8;
+      color: #ff6666;
+    }
+  
+    40% {
+      transform: scale(1);
+      opacity: 1;
+      color: #e60026;
+    }
+  
+    100% {
+      transform: scale(1);
+      opacity: 1;
+      color: #e60026;
+    }
+  }
+
+.vazia {
+padding: 100px;
+}

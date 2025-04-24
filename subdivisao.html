@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material RT Cordas</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+<body>
+    <div class="menu-topo">
+        <a href="index.html" >Abertura</a>
+        <a href="pulsacao.html">Pulsação</a>
+        <a href="divisao.html">Divisão</a>
+        <a href="" style="background-color: #A9A9A9;">Subdivisão</a>
+    </div>
+    <div class="column metronome">
+        <h4>Metrônomo</h4>
+        <div class="display">
+            <div class="display-interno">
+                <p>bpm</p>
+                <input type="number" id="bpm" value="60" min="40" max="208">
+            </div>
+            <div class="display-interno">
+                <p>Start</p>
+                <input id="start" type="checkbox">
+            </div>    
+            <div class="display-interno">
+                <p>Som</p>
+                <input type="checkbox" name="" id="som">
+            </div>    
+            <!-- <div class="display-interno">
+                <p>Divisão</p>
+                <input type="checkbox" name="" id="divisao">
+            </div>  -->
+            <div class="display-interno">
+                <p>Subdivisão</p>
+                <input type="checkbox" name="" id="subdivisao">
+            </div> 
+        </div>
+        <div class="container">
+            <!-- <div class="indicator" id="indicator"></div> -->
+            <div class=" central" id="central"></div>
+            <div class="circle top"><p>1 - 0</p></div>
+            <div class="circle right"><p>1/4</p></div>
+            <div class="circle bottom"><p>1/2</p></div>
+            <div class="circle left"><p>3/4</p></div>
+        </div>
+    </div>
+    <!-- <script src="/src/scripts/script.js"></script> -->
+    <script src="/src/scripts/engine2.js"></script>
+
+</body>
+</html>

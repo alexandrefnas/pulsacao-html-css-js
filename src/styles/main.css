@@ -1,0 +1,146 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #e3f2fd;
+    color: #0c0b0b;
+}
+
+/* Metronomo Digital (Icremento) */
+h4 {
+font-size: 32px;
+}
+.metronome {
+    /*border: 1px solid #292727;*/
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.display {
+    display: flex;
+    height: 10vh;
+    place-items: center;
+   
+}
+
+.display-interno {
+  place-items: center;
+  margin: 20px;
+  font-size: 10px;
+}
+
+.container {
+    position: relative;
+    width: 70vh; /* Largura do círculo central */
+    height: 70vh; /* Altura do círculo central */
+  }
+  
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid #292727;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background-color: #FFFFFF;
+    width: 15vh; /* Tamanho do círculo central */
+    height: 15vh; /* Tamanho do círculo central */
+  }
+
+  .central {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid #292727;
+    background-color: #FFFFFF;
+    /* background: #008000; */
+    width: 40vh; /* Tamanho do círculo central */
+    height: 40vh; /* Tamanho do círculo central */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza o círculo no meio */
+  }
+
+  .top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .right {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .left {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+.metronome #bpm{
+    width: 50px;
+    height: 20px;
+    /* margin-right: 20px; */
+    text-align: center;
+    /* margin-top: 10px;  */
+    /* height: 30px; */
+}
+
+.metronome input[type = "checkbox"]{
+    width: 50px;
+    height: 20px;
+    outline: none;
+    appearance: none;
+    /* margin-top: 5px;  */
+    border-radius: 30px;
+    background-color: #4b4b4b;
+    cursor: pointer;
+    position: relative;
+}
+
+.metronome input[type = "checkbox"]::before{
+    content: "";
+    height: 20px;
+    width: 30px;
+    background-color: #FF4500;
+    top: 50%;
+    left: 0.0rem;
+    border-radius: inherit;
+    position: absolute;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.metronome
+input:checked[type = "checkbox"]::before{
+    left: 1.3rem;
+    background-color: #32CD32;
+}
+
+
+.conteudo {
+  height: calc(100vh - 50px); /* ocupa o que sobrou da tela */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+}
+
+.conteudo img {
+  height: 90%;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* mantém proporção sem cortar */
+}

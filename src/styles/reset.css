@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.menu-topo {
+    background-color: #333;
+    overflow: hidden;
+    position: fixed; /* fixa no topo */
+    top: 0;
+    width: 100%;
+  }
+
+  .menu-topo a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+
+  /* Efeito ao passar o mouse */
+  .menu-topo a:hover {
+    background-color: #575757;
+    transform: scale(1.2);
+  }
