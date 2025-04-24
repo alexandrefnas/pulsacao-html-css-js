@@ -6,15 +6,15 @@
     <title>Material RT Cordas</title>
 
     <!-- css -->
-    <link rel="stylesheet" href="./src/styles/reset.css">
-    <link rel="stylesheet" href="./src/styles/main.css">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
     <div class="menu-topo">
-        <a href="index.html" >Abertura</a>
+        <a href="../../index.html" >Abertura</a>
         <a href="pulsacao.html">Pulsação</a>
-        <a href="" style="background-color: #A9A9A9;">Divisão</a>
-        <a href="subdivisao.html">Subdivisão</a>
+        <a href="divisao.html">Divisão</a>
+        <a href="" style="background-color: #A9A9A9;">Subdivisão</a>
     </div>
     <div class="column metronome">
         <h4>Metrônomo</h4>
@@ -31,26 +31,26 @@
                 <p>Som</p>
                 <input type="checkbox" name="" id="som">
             </div>    
-            <div class="display-interno">
+            <!-- <div class="display-interno">
                 <p>Divisão</p>
                 <input type="checkbox" name="" id="divisao">
-            </div> 
-            <!-- <div class="display-interno">
+            </div>  -->
+            <div class="display-interno">
                 <p>Subdivisão</p>
                 <input type="checkbox" name="" id="subdivisao">
-            </div>  -->
+            </div> 
         </div>
         <div class="container">
             <!-- <div class="indicator" id="indicator"></div> -->
             <div class=" central" id="central"></div>
             <div class="circle top"><p>1 - 0</p></div>
-            <!-- <div class="circle right"><p>1/4</p></div> -->
+            <div class="circle right"><p>1/4</p></div>
             <div class="circle bottom"><p>1/2</p></div>
-            <!-- <div class="circle left"><p>3/4</p></div> -->
+            <div class="circle left"><p>3/4</p></div>
         </div>
     </div>
     <!-- <script src="/src/scripts/script.js"></script> -->
-    <script src="/src/scripts/engine.js"></script>
+    <script src="../scripts/engine2.js"></script>
 
 </body>
 </html>
