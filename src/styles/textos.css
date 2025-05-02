@@ -1,7 +1,8 @@
 .textos {
     height: calc(100vh - 100px);
     width: 90%;
-    font-size: 45px;
+    /* font-size: 45px; */
+    font-size: clamp(1.5rem, 5vw, 3rem);
 }
 
 h1{

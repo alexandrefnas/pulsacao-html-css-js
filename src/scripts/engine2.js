@@ -3,8 +3,8 @@ let metronomeInterval;
 let playMetronomo = false;
 let audio2 = new Audio("../audios/hickory.mp3");
 let somAtivo = false;
-let divisaoativa = false;
 let subdivisaoativa = false;
+
 // Função para calcular o intervalo em milissegundos
 function calculateInterval(bpm) {
     return 60000 / bpm; // Intervalo em milissegundos
@@ -14,11 +14,6 @@ document.getElementById("som").addEventListener("click", () => {
     if (somAtivo) somAtivo = false
     else somAtivo = true
 });
-
-// document.getElementById("divisao").addEventListener("click", () => {
-//     if (divisaoativa) divisaoativa = false
-//     else divisaoativa = true
-// });
 
 document.getElementById("subdivisao").addEventListener("click", () => {
     if (subdivisaoativa) subdivisaoativa = false
@@ -31,10 +26,7 @@ document.getElementById("start").addEventListener("click", () => {
         const bpm = document.getElementById("bpm").value;
         const interval = calculateInterval(bpm);
         var num = 4;
-        // Intervalo de 1/4 do BPM para os círculos menores
-        // if (subdivisaoativa) { num = 4 }
-        // else if (divisaoativa) { num = 2 }
-            
+
         var quarterInterval = interval / num;
 
         metronomeInterval = setInterval(() => {
