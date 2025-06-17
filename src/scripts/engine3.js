@@ -3,7 +3,8 @@ let metronomeInterval;
 let playMetronomo = false;
 let audio2 = new Audio("../audios/hickory.mp3");
 let somAtivo = false;
-let subdivisaoativa = false;
+// let divisaoativa = false;
+let subdivisaoAtiva = false;
 
 // Função para calcular o intervalo em milissegundos
 function calculateInterval(bpm) {
@@ -15,9 +16,13 @@ document.getElementById("som").addEventListener("click", () => {
   else somAtivo = true;
 });
 
+// document.getElementById("divisao").addEventListener("click", () => {
+//   if (divisaoativa) divisaoativa = false;
+//   else divisaoativa = true;
+// });
+
 document.getElementById("subdivisao").addEventListener("click", () => {
-  if (subdivisaoativa) subdivisaoativa = false;
-  else subdivisaoativa = true;
+  subdivisaoAtiva = !subdivisaoAtiva;
 });
 
 document.getElementById("start").addEventListener("click", () => {
@@ -25,7 +30,7 @@ document.getElementById("start").addEventListener("click", () => {
     playMetronomo = true;
     const bpm = document.getElementById("bpm").value;
     const interval = calculateInterval(bpm);
-    var num = 4;
+    var num = 2;
 
     var quarterInterval = interval / num;
 
@@ -34,19 +39,18 @@ document.getElementById("start").addEventListener("click", () => {
       audio2.currentTime = 0;
       if (somAtivo) audio2.play();
 
-      if (!subdivisaoativa) {
-        // Muda a cor do círculo central para vermelho e depois para verde
+      if (!subdivisaoAtiva) {
         document.getElementById("central").style.backgroundColor = "#ADFF2F";
 
-        // Atraso para voltar a cor para verde após meio tempo de intervalo (metade da batida)
         setTimeout(() => {
           document.getElementById("central").style.backgroundColor = "#FFFFFF";
-        }, interval / 2); // Meio do intervalo para voltar ao verde
+        }, interval / 2);
       } else {
         document.getElementById("central").style.backgroundColor = "#FFFFFF";
       }
+
       // Ciclo para fazer os círculos menores mudarem de cor
-      changeColorOfCircles(quarterInterval);
+      changeColorOfCircles(interval);
     }, interval);
 
     document.getElementById("bpm").disabled = true;
@@ -58,20 +62,29 @@ document.getElementById("start").addEventListener("click", () => {
   }
 });
 
-// Função para fazer os círculos menores mudarem de cor
-function changeColorOfCircles(quarterInterval) {
-  if (!subdivisaoativa) return;
-  const circles = document.querySelectorAll(".circle");
-  circles.forEach((circle, index) => {
-    // Cada círculo vai mudar de cor para vermelho durante seu tempo de "piscada"
-    setTimeout(() => {
-      circle.style.backgroundColor = "#FF0000"; // Torna o círculo vermelho
-    }, index * quarterInterval); // Sequencial para cada círculo
+function changeColorOfCircles(baseInterval) {
+      if (!subdivisaoAtiva) return;
+  const allCircles = document.querySelectorAll(".circle");
 
-    // Depois do tempo do quarto intervalo, volta a cor original
+  let subdivisoes = 3;
+
+//   if (subdivisaoAtiva) subdivisoes = 3;
+
+  const interval = baseInterval / subdivisoes;
+
+  for (let i = 0; i < subdivisoes; i++) {
     setTimeout(() => {
-      // circle.style.backgroundColor = "#3498db"; // Torna o círculo azul novamente
-      circle.style.backgroundColor = "#FFFFFF";
-    }, (index + 1) * quarterInterval);
-  });
+      const circle = allCircles[i];
+      if (circle) {
+        circle.style.backgroundColor = "#FF0000";
+      }
+    }, i * interval);
+
+    setTimeout(() => {
+      const circle = allCircles[i];
+      if (circle) {
+        circle.style.backgroundColor = "#FFFFFF";
+      }
+    }, (i + 1) * interval);
+  }
 }
